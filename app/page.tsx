@@ -180,7 +180,7 @@ export default function Home() {
         <section className="care-strip" aria-label={t("What to know", "Lo que debes saber")}>
           <div><span>⌂</span><strong>{t("Indoor kittens", "Gatitos de interior")}</strong><small>{t("Clean, safe & socialized", "Limpios, seguros y sociables")}</small></div>
           <div><span>✓</span><strong>{t("Litter trained", "Usan el arenero")}</strong><small>{t("They know the routine", "Ya conocen la rutina")}</small></div>
-          <div><span>＋</span><strong>{t("Under veterinary care", "Bajo cuidado veterinario")}</strong><small>{t("Examined, treated & improving", "Examinados, tratados y mejorando")}</small></div>
+          <div><span>＋</span><strong>{t("Veterinary care received", "Atención veterinaria recibida")}</strong><small>{t("Examined, treated & improving", "Examinados, tratados y mejorando")}</small></div>
           <div><span>○</span><strong>{t("Not fixed yet", "Aún sin esterilizar")}</strong><small>{t("Spay/neuter still needed", "Todavía necesitan esterilización")}</small></div>
         </section>
 
