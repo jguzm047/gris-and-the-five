@@ -27,6 +27,21 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Fetch the public kitten photos
+        shell: bash
+        run: |
+          base="https://little-whiskers-kittens.jguzm047.chatgpt.site"
+          paths=(
+            "favicon.svg" "file.svg" "globe.svg" "window.svg" "og-v2.png" "og.png"
+            "kittens/baby.jpeg" "kittens/curious-kitten.jpeg" "kittens/mango.jpeg" "kittens/mocha.jpeg" "kittens/toby.jpeg"
+            "kittens/family/family-01.jpeg" "kittens/family/family-02.jpeg" "kittens/family/family-03.jpeg" "kittens/family/family-04.jpeg"
+            "kittens/family/family-05.jpeg" "kittens/family/family-06.jpeg" "kittens/family/family-07.jpeg" "kittens/family/family-08.jpeg"
+            "kittens/gris/gris-family-outside.jpeg" "kittens/gris/gris-nursing.jpeg" "kittens/gris/gris-portrait.jpeg" "kittens/gris/gris-with-kittens.jpeg"
+          )
+          for path in "${paths[@]}"; do
+            mkdir -p "public/$(dirname "$path")"
+            curl --fail --silent --show-error --location "$base/$path" --output "public/$path"
+          done
       - name: Build the GitHub Pages site
         run: npm run build:pages
       - name: Configure Pages
